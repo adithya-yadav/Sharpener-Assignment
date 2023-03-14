@@ -42,72 +42,58 @@ function addDriverHandler(e) {
   if (name.length < 1) {
     document.getElementById("name").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (age.length < 1) {
     document.getElementById("age").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (mobileNo.length < 1) {
     document.getElementById("mobile_no").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (transporter.length < 1) {
     document.getElementById("transporter").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (street.length < 1) {
     document.getElementById("street").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (country.length < 1) {
     document.getElementById("country").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (city.length < 1) {
     document.getElementById("city").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (zip.length < 1) {
     document.getElementById("zip").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (building.length < 1) {
     document.getElementById("building").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (work.length < 1) {
     document.getElementById("work_status").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (profession.length < 1) {
     document.getElementById("profession").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (employer.length < 1) {
     document.getElementById("employer").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (id.length < 1) {
     document.getElementById("id_no").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (wordAddress.length < 1) {
     document.getElementById("work_address").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (age < 18) {
     alert("the driver should not be less than 18 years old");
@@ -116,7 +102,6 @@ function addDriverHandler(e) {
   if (location.length < 1) {
     document.getElemetById("select_location").style = "border:1px solid red";
     isDone = false;
-    alert("Enter Valid Inputs");
   }
   if (isDone) {
     const data = localStorage.getItem("driverList");
@@ -129,5 +114,7 @@ function addDriverHandler(e) {
     }
     localStorage.setItem("driverList", JSON.stringify(updatedArray));
     window.location.assign("./index.html");
+  }else{
+    alert("Enter Valid Inputs");
   }
 }
