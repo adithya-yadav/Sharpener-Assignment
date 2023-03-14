@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>on-boarding</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div class="center">
+      <div class="selectors">
+        <select name="country" id="select_country">
+          <option value="All">All</option>
+          <option value="USA">USA</option>
+          <option value="INDIA">INDIA</option>
+          <option value="UK">UK</option>
+          <option value="RUSSIA">RUSSIA</option>
+        </select>
+        <input type="date" />
+      </div>
+      <div class="driver_outer_field">
+        <div class="driver_outer_div">
+          <div class="driver_field">
+            <h5>Active Drivers</h5>
+            <div class="inner_div">
+              <span>👤</span>
+              <span>0</span>
+            </div>
+          </div>
+          <div class="driver_field">
+            <h5>Inactive Drivers</h5>
+            <div class="inner_div">
+              <span>👤</span>
+              <span>0</span>
+            </div>
+          </div>
+        </div>
+        <div class="driver_outer_div">
+          <div class="driver_field">
+            <h5>In-Process Drivers</h5>
+            <div class="inner_div">
+              <span>👤</span>
+              <span id="count">0</span>
+            </div>
+          </div>
+          <div class="driver_field">
+            <h5>Rejected Drivers</h5>
+            <div class="inner_div">
+              <span>👤</span>
+              <span>0</span>
+            </div>
+          </div>
+        </div>
+        <div class="driver_outer_div">
+          <button id="addDriverId" class="btn btn-success">
+            Add New Driver
+          </button>
+          <div class="driver_field">
+            <h5>Total Drivers</h5>
+            <span>👤</span>
+            <p>percentage increase</p>
+            <div class="inner_div">
+              <span>0%</span>
+              <span>0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table>
+        <thead>
+            <tr class="driver_headers">
+                    <td>STATUS</td>
+                    <td>MOXEY ID</td>
+                    <td>TRANSPORTER</td>
+                    <td>DRIVER NAME</td>
+                    <td>MOBILE NO</td>
+                    <td>LOCATION</td>
+                    <td>CARD NO</td>
+                    <td>ACTIONS</td>
+            </tr>
+        </thead>
+        <tbody id="driverList">
+        </tbody>
+      </table>
+    </div>
+    <div id="showDetailsId">
+      
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

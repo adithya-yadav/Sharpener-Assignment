@@ -1,0 +1,99 @@
+.center{
+    margin: 1rem;
+    padding: .5rem;
+    border: 1px solid black;
+}
+.center .selectors #select_country{
+    margin: 1rem;
+    padding: .3rem;
+    width: 30%;
+}
+.center .selectors #select_state{
+    margin: 1rem;
+    padding: .3rem;
+}
+.center .driver_outer_field{
+    display:flex;
+}
+
+.center .driver_outer_field .driver_field{
+    margin: 1rem;
+    padding: .5rem;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+ .center .driver_outer_field .driver_outer_div{
+    width: 50%;
+ }
+
+ .center .driver_outer_field .driver_outer_div .driver_field .inner_div{
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .center table{
+    width: 100%;
+ }
+ .center table thead .driver_headers{
+    background-color: green;
+    padding: .5rem;
+    color: white;
+ }
+
+ .center table tbody tr td{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+ }
+
+ .center .details_field{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+
+ }
+
+ .center table tbody tr td .eye_btn{
+    background-color: none;
+    border: none;
+    width: 100%;
+    color: white;
+ }
+
+ #showDetailsId{
+   position: fixed;
+   z-index: 1;
+   top: 25%;
+   left: 30%;
+   width: 40%;
+   background-color:white;
+ }
+
+ #showDetailsId #detailsHead{
+   display: flex;
+   justify-content: space-between;
+   background-color: green;
+   margin: 0%;
+   padding: 1rem;
+   color: white;
+ }
+
+ #showDetailsId #detailsHead .close_btn{
+   background-color:transparent;
+   border: none;
+   color: white;
+   width: 3rem;
+   font-weight: 500;
+   font-size:large;
+ }
+ #showDetailsId div{
+   margin: 1rem;
+   border-bottom: 1px solid silver;
+ }
+ #showDetailsId .deleteDriver{
+   color: red;
+   display: block;
+   width: 100%;
+   margin-top: 1rem;
+ }
+ 
