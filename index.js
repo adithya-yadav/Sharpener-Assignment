@@ -85,7 +85,7 @@ function changeCountryHandler(){
     parent.innerHTML = ""
     if (data) {
         data.map((list, ind) => {
-          if(list.location === countryValue.value){
+          if(list.location === countryValue.value || countryValue.value === "All" ){
             count.textContent = parseInt(count.textContent)+1
           parent.innerHTML = parent.innerHTML + `<tr key=${ind}>
           <td><button class="btn-warning">pending...</button></td>
