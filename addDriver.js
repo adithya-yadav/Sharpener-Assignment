@@ -4,24 +4,24 @@ document
 
 function addDriverHandler(e) {
   e.preventDefault();
-  let name = document.getElementById("name").value;
-  let age = document.getElementById("age").value;
-  let mobileNo = document.getElementById("mobile_no").value;
-  let transporter = document.getElementById("transporter").value;
-  let street = document.getElementById("street").value;
-  let country = document.getElementById("country").value;
-  let city = document.getElementById("city").value;
-  let zip = document.getElementById("zip").value;
-  let building = document.getElementById("building").value;
-  let work = document.getElementById("work_status").value;
-  let profession = document.getElementById("profession").value;
-  let employer = document.getElementById("employer").value;
-  let salary = document.getElementById("salary").value;
-  let wordAddress = document.getElementById("work_address").value;
-  let id = document.getElementById("id_no").value;
-  let location = document.getElementById("select_location").value;
+  const name = document.getElementById("name");
+  const age = document.getElementById("age");
+  const mobileNo = document.getElementById("mobile_no");
+  const transporter = document.getElementById("transporter");
+  const street = document.getElementById("street");
+  const country = document.getElementById("country");
+  const city = document.getElementById("city");
+  const zip = document.getElementById("zip");
+  const building = document.getElementById("building");
+  const work = document.getElementById("work_status");
+  const profession = document.getElementById("profession");
+  const employer = document.getElementById("employer");
+  const salary = document.getElementById("salary");
+  const wordAddress = document.getElementById("work_address");
+  const id = document.getElementById("id_no");
+  const location = document.getElementById("select_location");
   let isDone = true;
-  const obj = {
+  const arr = [
     name,
     age,
     mobileNo,
@@ -38,83 +38,51 @@ function addDriverHandler(e) {
     wordAddress,
     id,
     location,
+  ];
+  const employee = {
+    name: name.value,
+    age: age.value,
+    mobileNo: mobileNo.value,
+    transporter: transporter.value,
+    street: street.value,
+    country: country.value,
+    city: city.value,
+    zip: zip.value,
+    building: building.value,
+    work: work.value,
+    profession: profession.value,
+    employer: employer.value,
+    salary: salary.value,
+    wordAddress: wordAddress.value,
+    id: id.value,
+    location: location.value,
   };
-  if (name.length < 1) {
-    document.getElementById("name").style = "border:1px solid red";
-    isDone = false;
+
+  for (const val of arr) {
+    if (val.value.length < 1) {
+      isDone = false;
+      val.style = "border:1px solid red";
+    }
+    if (val.id === "age") {
+      if (val.value < 18) {
+        isDone = false;
+        val.style = "border:1px solid red";
+        alert("the driver should not be less than 18 years old");
+      }
+    }
   }
-  if (age.length < 1) {
-    document.getElementById("age").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (mobileNo.length < 1) {
-    document.getElementById("mobile_no").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (transporter.length < 1) {
-    document.getElementById("transporter").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (street.length < 1) {
-    document.getElementById("street").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (country.length < 1) {
-    document.getElementById("country").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (city.length < 1) {
-    document.getElementById("city").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (zip.length < 1) {
-    document.getElementById("zip").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (building.length < 1) {
-    document.getElementById("building").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (work.length < 1) {
-    document.getElementById("work_status").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (profession.length < 1) {
-    document.getElementById("profession").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (employer.length < 1) {
-    document.getElementById("employer").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (id.length < 1) {
-    document.getElementById("id_no").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (wordAddress.length < 1) {
-    document.getElementById("work_address").style = "border:1px solid red";
-    isDone = false;
-  }
-  if (age < 18) {
-    alert("the driver should not be less than 18 years old");
-    isDone = false;
-  }
-  if (location.length < 1) {
-    document.getElemetById("select_location").style = "border:1px solid red";
-    isDone = false;
-  }
+
   if (isDone) {
     const data = localStorage.getItem("driverList");
-    console.log(data);
     let updatedArray;
     if (data === null) {
-      updatedArray = [obj];
+      updatedArray = [employee];
     } else {
-      updatedArray = [...JSON.parse(data), obj];
+      updatedArray = [...JSON.parse(data), employee];
     }
     localStorage.setItem("driverList", JSON.stringify(updatedArray));
     window.location.assign("./index.html");
-  }else{
+  } else {
     alert("Enter Valid Inputs");
   }
 }
